@@ -11,63 +11,111 @@
 </head>
 
 <body>
-  <!-- Header (keeping existing code) -->
+
+  <!-- Navbar -->
   <header class="header">
-    <div class="container">
-      <nav class="nav">
-        <a href="#" class="logo">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-          </svg>
-          Techvory
+    <div class="container navbar-container">
+      <a href="#" class="logo">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="logo-icon">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <span>Techvory</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#portfolio">Work</a>
+        <a href="#why-choose-us">Why Us</a>
+        <a href="#contact">Contact</a>
+        <!-- Mobile Only CTA -->
+        <a href="https://calendly.com/business-techvory/30min" target="_blank" rel="noopener noreferrer"
+          class="button primary nav-btn mobile-cta">
+          Book Call
         </a>
-        <div>
-          <a href="https://calendly.com/business-techvory/30min" target="_blank" rel="noopener noreferrer"
-            class="button primary cta">
-            Book Free Call
-          </a>
-        </div>
       </nav>
+
+      <div class="nav-actions">
+        <a href="https://calendly.com/business-techvory/30min" target="_blank" rel="noopener noreferrer"
+          class="button primary nav-btn desktop-cta">
+          Book Call
+        </a>
+        <button class="hamburger-btn" aria-label="Toggle menu" onclick="toggleMenu()">
+          <!-- Menu Icon -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="icon-menu" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+          <!-- Close Icon -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="icon-close" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
     </div>
   </header>
 
   <main>
     <!-- Hero Section -->
     <section class="hero">
-      <div class="container">
-        <span class="badge">Idea to MVP in 30 days</span>
-        <h1 class="hero-heading">Launch Your Product. Not Just a Prototype</h1>
-        <p class="hero-text">Production-grade MVPs, SaaS apps, and AI tools delivered <b>in weeks</b> — not months.</p>
+      <div class="hero-bg"></div>
+      <!-- Layer 3: Foreground accent blobs (fastest) -->
+      <div class="parallax-layer accent-blob-1" data-speed="0.2">
+        <div class="hero-decoration accent-shape"></div>
+      </div>
+      <div class="parallax-layer accent-blob-2" data-speed="0.25">
+        <div class="hero-decoration accent-shape pink"></div>
+      </div>
+      <div class="parallax-layer accent-blob-3" data-speed="0.15">
+        <div class="hero-decoration accent-shape blue"></div>
+      </div>
+
+      <div class="container hero-content">
+        <div class="hero-badge">Idea to MVP in 30 days</div>
+        <h1 class="hero-heading">
+          Launch Your Product <br>
+          <span class="highlight">/with speed/</span>
+        </h1>
+        <p class="hero-text">
+          Production-grade MVPs, SaaS apps, and AI tools delivered in weeks.
+          Stop experimenting, start scaling.
+        </p>
         <div class="hero-buttons">
-          <a href="#contact" class="button primary">Book Free Strategy Call</a>
-          <a href="#portfolio" class="button secondary">View Portfolio</a>
+          <a href="#contact" class="button primary hero-btn">Start Building</a>
+          <a href="#portfolio" class="button secondary hero-btn-sec">View Portfolio</a>
         </div>
       </div>
-      <div class="tech-background"></div>
-      <canvas id="miCanvas"></canvas>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="services">
       <div class="container">
-        <h2>Our Services</h2>
-        <p class="subtitle">Comprehensive product development solutions tailored to your needs</p>
+        <div class="section-header">
+          <span class="section-tag">/capabilities/</span>
+          <h2>Build Everything.</h2>
+          <p class="subtitle">Comprehensive product development solutions.</p>
+        </div>
+
         <div class="services-grid">
           <div class="service-card">
-            <div class="service-icon">
+            <div class="service-icon-wrapper">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-code">
+                class="lucide lucide-code service-icon">
                 <polyline points="16 18 22 12 16 6" />
                 <polyline points="8 6 2 12 8 18" />
               </svg>
             </div>
-            <h3>🚀 MVP & SaaS App</h3>
+            <h3>MVP & SaaS App</h3>
             <p>We build production-ready MVPs and SaaS apps — from auth to payments to admin dashboards — in 30 days.
             </p>
           </div>
           <div class="service-card">
-            <div class="service-icon">
+            <div class="service-icon-wrapper">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
                 <line x1="3" y1="9" x2="21" y2="9"></line>
@@ -77,9 +125,10 @@
             <h3>Landing pages</h3>
             <p>High-converting landing pages optimized for lead generation and sales that boost your business growth.
             </p>
+
           </div>
           <div class="service-card">
-            <div class="service-icon">
+            <div class="service-icon-wrapper">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 class="lucide lucide-construction">
@@ -95,9 +144,10 @@
             </div>
             <h3>Website Revamp</h3>
             <p>Transform outdated websites into visually appealing and user-friendly platforms.</p>
+
           </div>
           <div class="service-card">
-            <div class="service-icon">
+            <div class="service-icon-wrapper">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 class="lucide lucide-database-zap">
@@ -110,9 +160,10 @@
             </div>
             <h3>AI App Integration</h3>
             <p>We add AI where it actually helps: GPT chatbots, analytics to drive business growth.</p>
+
           </div>
           <div class="service-card">
-            <div class="service-icon">
+            <div class="service-icon-wrapper">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 class="lucide lucide-layout-template">
@@ -124,9 +175,10 @@
             <h3>Internal Tools</h3>
             <p>We design and build dashboards, admin panels, analytics tools, and workflows that fit your business
               perfectly.</p>
+
           </div>
           <div class="service-card">
-            <div class="service-icon">
+            <div class="service-icon-wrapper">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 class="lucide lucide-hard-drive-download">
@@ -139,7 +191,8 @@
             </div>
             <h3>E-Commerce Store</h3>
             <p>Launch your storefront or marketplace with full-stack support — product listings, checkout, CMS,
-              analytics.</p>
+              analytcs.</p>
+
           </div>
           <!-- Add other service cards -->
         </div>
@@ -149,8 +202,11 @@
     <!-- Why Choose Us Section -->
     <section id="why-choose-us" class="why-choose-us">
       <div class="container">
-        <h2>Why Choose Us</h2>
-        <p class="subtitle">Partner with experts who understand your business needs</p>
+        <div class="section-header">
+          <span class="section-tag">/why us/</span>
+          <h2>Why Choose Us.</h2>
+          <p class="subtitle">Partner with experts who understand your business needs.</p>
+        </div>
 
         <!-- <div class="stats-grid">
           <div class="stat-card">
@@ -251,7 +307,7 @@
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
               </svg>
             </div>
-            <h3>Your Partner, Not Just a Vendor</h3>
+            <h3>Partner, Not Just Vendor</h3>
             <p>We care about your product’s success as much as you do. Our goal: help you launch, learn, and grow.</p>
           </div>
         </div>
@@ -260,8 +316,11 @@
 
     <section id="team" class="team-members">
       <div class="container">
-        <!-- <h2>Meet Our Team</h2>
-        <p class="subtitle">Talented professionals dedicated to your success</p> -->
+        <div class="section-header">
+          <span class="section-tag">/team/</span>
+          <h2>Meet Our Team.</h2>
+          <p class="subtitle">Talented professionals dedicated to your success.</p>
+        </div>
 
         <div class="team-grid">
           <div class="team-card">
@@ -270,9 +329,10 @@
             </div>
             <div class="team-content">
               <h3>Arpit Rathi</h3>
-              <span class="role">Frontend developer</span>
+              <span class="role">Senior Frontend Engineer</span>
               <p>UI/UX designer specializing in fast, sleek, and high-performing MVPs for SaaS startups.
-Also experienced in full-cycle web/app design, scalable UI systems, and crafting performance-optimized digital experiences across industries.</p>
+                Also experienced in full-cycle web/app design, scalable UI systems, and crafting performance-optimized
+                digital experiences across industries.</p>
               <div class="social-links">
                 <a href="https://www.linkedin.com/in/arpitrathi2218/" target="_blank" aria-label="LinkedIn">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -300,9 +360,11 @@ Also experienced in full-cycle web/app design, scalable UI systems, and crafting
             </div>
             <div class="team-content">
               <h3>Navdeep Singh</h3>
-              <span class="role">Backend Developer</span>
-              <p>Backend engineer with expertise in secure, scalable infrastructure and AI-powered backend systems for SaaS products.
-Skilled in API development, data architecture, and integrating intelligent features while maintaining enterprise-grade security.</p>
+              <span class="role">Senior Backend Engineer</span>
+              <p>Backend engineer with expertise in secure, scalable infrastructure and AI-powered backend systems for
+                SaaS products.
+                Skilled in API development, data architecture, and integrating intelligent features while maintaining
+                enterprise-grade security.</p>
               <div class="social-links">
                 <a href="https://www.linkedin.com/in/navdeep-singh-494498152/" target="_blank" aria-label="LinkedIn">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -330,13 +392,20 @@ Skilled in API development, data architecture, and integrating intelligent featu
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
       <div class="container">
-        <h2>Featured Work</h2>
-        <p class="subtitle">Explore our latest projects and success stories</p>
+        <div class="section-header">
+          <span class="section-tag">/projects/</span>
+          <h2>Featured Work.</h2>
+          <p class="subtitle">Explore our latest projects and success stories.</p>
+        </div>
         <div class="portfolio-grid">
-          <div class="portfolio-item">
-            <img src="images/spotifyclone.png" alt="Spotify Clone">
-            <div class="portfolio-overlay">
+          <!-- Item 1 -->
+          <div class="portfolio-card">
+            <div class="portfolio-image">
+              <img src="images/spotifyclone.png" alt="Spotify Clone">
+            </div>
+            <div class="portfolio-content">
               <h3>Respotify</h3>
+              <p>A fully functional Spotify clone web application.</p>
               <div class="tags">
                 <span>React</span>
                 <span>OAuth2.0</span>
@@ -344,10 +413,15 @@ Skilled in API development, data architecture, and integrating intelligent featu
               </div>
             </div>
           </div>
-          <div class="portfolio-item">
-            <img src="images/whatsappclone.png" alt="Whatsapp clone">
-            <div class="portfolio-overlay">
+
+          <!-- Item 2 -->
+          <div class="portfolio-card">
+            <div class="portfolio-image">
+              <img src="images/whatsappclone.png" alt="Whatsapp clone">
+            </div>
+            <div class="portfolio-content">
               <h3>Pulsechat</h3>
+              <p>Realtime messaging application with instant updates.</p>
               <div class="tags">
                 <span>React</span>
                 <span>Firebase</span>
@@ -355,10 +429,15 @@ Skilled in API development, data architecture, and integrating intelligent featu
               </div>
             </div>
           </div>
-          <div class="portfolio-item">
-            <img src="images/themeswitcher.png" alt="Theme switcher">
-            <div class="portfolio-overlay">
+
+          <!-- Item 3 -->
+          <div class="portfolio-card">
+            <div class="portfolio-image">
+              <img src="images/themeswitcher.png" alt="Theme switcher">
+            </div>
+            <div class="portfolio-content">
               <h3>Themed</h3>
+              <p>Advanced theme switching capability demonstration.</p>
               <div class="tags">
                 <span>UI/UX design</span>
                 <span>HTML</span>
@@ -366,12 +445,17 @@ Skilled in API development, data architecture, and integrating intelligent featu
               </div>
             </div>
           </div>
-          <a class="portfolio-item" target="_blank"
+
+          <!-- Item 4 -->
+          <a class="portfolio-card" target="_blank"
             href="https://medium.com/@business_28892/a-modern-e-commerce-application-backend-a-deep-dive-into-technologies-5ad8dd96b7c5">
-            <img src="https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80"
-              alt="E-commerce Platform">
-            <div class="portfolio-overlay">
+            <div class="portfolio-image">
+              <img src="https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80"
+                alt="E-commerce Platform">
+            </div>
+            <div class="portfolio-content">
               <h3>BoldStore</h3>
+              <p>Scalable backend for modern e-commerce platforms.</p>
               <div class="tags">
                 <span>Java</span>
                 <span>Springboot</span>
@@ -379,25 +463,32 @@ Skilled in API development, data architecture, and integrating intelligent featu
               </div>
             </div>
           </a>
-          <a class="portfolio-item"
-            href="https://medium.com/@business_28892/building-the-backend-of-a-stock-market-application-technologies-and-implementation-99833795831f"
-            target="_blank">
-            <div class="portfolio-item">
+
+          <!-- Item 5 -->
+          <a class="portfolio-card" target="_blank"
+            href="https://medium.com/@business_28892/building-the-backend-of-a-stock-market-application-technologies-and-implementation-99833795831f">
+            <div class="portfolio-image">
               <img src="images/stock_market.png" alt="Stock Market Tracker">
-              <div class="portfolio-overlay">
-                <h3>Equity Screener</h3>
-                <div class="tags">
-                  <span>Zuul</span>
-                  <span>Eureka Discovery Service</span>
-                </div>
+            </div>
+            <div class="portfolio-content">
+              <h3>Equity Screener</h3>
+              <p>Realtime stock market analysis and tracking tool.</p>
+              <div class="tags">
+                <span>Zuul</span>
+                <span>Eureka</span>
               </div>
             </div>
           </a>
-          <a class="portfolio-item" target="_blank"
+
+          <!-- Item 6 -->
+          <a class="portfolio-card" target="_blank"
             href="https://medium.com/@business_28892/building-a-secure-payment-gateway-with-oauth-and-captcha-18bd252aca15">
-            <img src="images/payment_gateway.png" alt="Payment Gateway">
-            <div class="portfolio-overlay">
-              <h3>PayNow Payment gateway</h3>
+            <div class="portfolio-image">
+              <img src="images/payment_gateway.png" alt="Payment Gateway">
+            </div>
+            <div class="portfolio-content">
+              <h3>PayNow Gateway</h3>
+              <p>Secure payment processing integration.</p>
               <div class="tags">
                 <span>Java</span>
                 <span>Razorpay</span>
@@ -405,7 +496,6 @@ Skilled in API development, data architecture, and integrating intelligent featu
               </div>
             </div>
           </a>
-          <!-- Add other portfolio items -->
         </div>
       </div>
     </section>
@@ -413,24 +503,35 @@ Skilled in API development, data architecture, and integrating intelligent featu
     <!-- Contact Section -->
     <section id="contact" class="contact">
       <div class="container">
-        <h2>Start Your Project</h2>
-        <p class="subtitle">Schedule a free consultation to discuss your needs</p>
+        <div class="section-header">
+          <span class="section-tag">/contact/</span>
+          <h2>Start Your Project.</h2>
+          <p class="subtitle">Schedule a free consultation to discuss your needs.</p>
+        </div>
         <div class="contact-grid">
           <div class="contact-info">
-            <a href="mailto:business@techvory.com" class="contact-link">
+            <a href="mailto:techvorysolutions@gmail.com" class="contact-link">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                 <polyline points="22,6 12,13 2,6"></polyline>
               </svg>
-              business@techvory.com
+              techvorysolutions@gmail.com
             </a>
-            <a href="tel:+919560553228" class="contact-link">
+            <a href="tel:+919566792784" class="contact-link">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path
                   d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
                 </path>
               </svg>
-              +91 9560553228
+              +91 9566792784
+            </a>
+            <a href="tel:+919451672228" class="contact-link">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+              </svg>
+              +91 9451672228
             </a>
           </div>
           <a href="https://calendly.com/business-techvory/30min" target="_blank" rel="noopener noreferrer"
@@ -450,22 +551,39 @@ Skilled in API development, data architecture, and integrating intelligent featu
   </div>
 
   <!-- Footer -->
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-grid">
+      <div class="footer-top">
         <div class="footer-brand">
           <h3>Techvory</h3>
-          <p>Transforming ideas into powerful web solutions.</p>
+          <p>Transforming ideas into powerful <br> web solutions since 2021.</p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/techvory-solutions/" target="_blank" aria-label="Linkedin">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0zM7.08 20.16H3.56V9h3.52v11.16zm-1.77-12.8a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm15.09 12.8h-3.52v-5.7c0-1.36-.03-3.1-1.89-3.1-1.89 0-2.18 1.48-2.18 3v5.8h-3.52V9h3.37v1.52h.05c.47-.89 1.6-1.82 3.29-1.82 3.52 0 4.17 2.31 4.17 5.31v6.15z" />
+              </svg>
+            </a>
+            <a href="https://x.com/techvory" target="_blank" aria-label="Twitter">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23.953 4.569a10 10 0 0 1-2.825.775 4.937 4.937 0 0 0 2.163-2.723 10.15 10.15 0 0 1-3.127 1.196 4.924 4.924 0 0 0-8.384 4.482A13.978 13.978 0 0 1 1.64 3.15 4.822 4.822 0 0 0 3.18 9.723a4.903 4.903 0 0 1-2.229-.616v.06a4.924 4.924 0 0 0 3.946 4.827 4.996 4.996 0 0 1-2.224.084 4.929 4.929 0 0 0 4.604 3.417A9.875 9.875 0 0 1 0 20.539a13.944 13.944 0 0 0 7.548 2.212c9.057 0 14.01-7.514 14.01-14.01 0-.213-.004-.426-.014-.637a9.935 9.935 0 0 0 2.408-2.531z" />
+              </svg>
+            </a>
+          </div>
         </div>
-        <div class="footer-links">
+
+        <div class="footer-links-group">
           <h4>Services</h4>
           <ul>
-            <li>Frontend Development</li>
-            <li>Backend Development</li>
-            <li>Full Stack Solutions</li>
+            <li><a href="#">Frontend Development</a></li>
+            <li><a href="#">Backend Development</a></li>
+            <li><a href="#">Full Stack Solutions</a></li>
           </ul>
         </div>
-        <div class="footer-links">
+
+        <div class="footer-links-group">
           <h4>Company</h4>
           <ul>
             <li><a href="#services">Services</a></li>
@@ -474,27 +592,23 @@ Skilled in API development, data architecture, and integrating intelligent featu
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
-        <div class="footer-social">
-          <h4>Connect</h4>
-          <div class="social-links">
-            <a href="https://www.linkedin.com/in/techvory-solutions/" target="_blank" aria-label="Linkedin">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0zM7.08 20.16H3.56V9h3.52v11.16zm-1.77-12.8a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm15.09 12.8h-3.52v-5.7c0-1.36-.03-3.1-1.89-3.1-1.89 0-2.18 1.48-2.18 3v5.8h-3.52V9h3.37v1.52h.05c.47-.89 1.6-1.82 3.29-1.82 3.52 0 4.17 2.31 4.17 5.31v6.15z" />
-              </svg>
-            </a>
-            <a href="https://x.com/techvory" target="_blank" aria-label="Twitter">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M23.953 4.569a10 10 0 0 1-2.825.775 4.937 4.937 0 0 0 2.163-2.723 10.15 10.15 0 0 1-3.127 1.196 4.924 4.924 0 0 0-8.384 4.482A13.978 13.978 0 0 1 1.64 3.15 4.822 4.822 0 0 0 3.18 9.723a4.903 4.903 0 0 1-2.229-.616v.06a4.924 4.924 0 0 0 3.946 4.827 4.996 4.996 0 0 1-2.224.084 4.929 4.929 0 0 0 4.604 3.417A9.875 9.875 0 0 1 0 20.539a13.944 13.944 0 0 0 7.548 2.212c9.057 0 14.01-7.514 14.01-14.01 0-.213-.004-.426-.014-.637a9.935 9.935 0 0 0 2.408-2.531z" />
-              </svg>
-            </a>
-            <!-- Add other social links -->
-          </div>
+
+        <div class="footer-links-group">
+          <h4>Contact</h4>
+          <ul class="contact-details">
+            <li>techvorysolutions@gmail.com</li>
+            <li>+91 9566792784</li>
+            <li>+91 9451672228</li>
+          </ul>
         </div>
       </div>
+
       <div class="footer-bottom">
         <p>&copy; 2025 Techvory. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+        </div>
       </div>
     </div>
   </footer>
@@ -609,73 +723,6 @@ Skilled in API development, data architecture, and integrating intelligent featu
     integrity="sha512-CPA5LMoJI/a5HkSIAKcBtFXe4gqGjPUL2ExF/3PmhrrHI17wod9xOqqF+0WZQRKIIq0KwF8oG5BaiWobtrke3A=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
-    //     class PointerTrail {
-    //     constructor() {
-    //         this.dots = [];
-    //         this.numDots = 12;
-    //         this.mousePosX = 0;
-    //         this.mousePosY = 0;
-    //         this.currentX = 0;
-    //         this.currentY = 0;
-    //         this.speed = 0.15; // Trail follow speed
-    //         this.init();
-    //     }
-
-    //     init() {
-    //         // Create trail dots
-    //         for (let i = 0; i < this.numDots; i++) {
-    //             const dot = document.createElement('div');
-    //             dot.className = 'trail-dot';
-    //             document.body.appendChild(dot);
-    //             this.dots.push({
-    //                 element: dot,
-    //                 x: 0,
-    //                 y: 0,
-    //                 scale: 1 - (i * 0.05) // Gradually decrease size
-    //             });
-    //         }
-
-    //         // Setup event listeners
-    //         window.addEventListener('mousemove', this.handleMouseMove.bind(this));
-    //         this.animate();
-    //     }
-
-    //     handleMouseMove(e) {
-    //         this.mousePosX = e.clientX;
-    //         this.mousePosY = e.clientY;
-    //     }
-
-    //     animate() {
-    //         // Smooth movement
-    //         this.currentX += (this.mousePosX - this.currentX) * this.speed;
-    //         this.currentY += (this.mousePosY - this.currentY) * this.speed;
-
-    //         // Update each dot position
-    //         this.dots.forEach((dot, index) => {
-    //             if (index === 0) {
-    //                 dot.x = this.currentX;
-    //                 dot.y = this.currentY;
-    //             } else {
-    //                 const prevDot = this.dots[index - 1];
-    //                 dot.x += (prevDot.x - dot.x) * this.speed;
-    //                 dot.y += (prevDot.y - dot.y) * this.speed;
-    //             }
-
-    //             // Apply position and scale
-    //             dot.element.style.transform = `translate(${dot.x - 10}px, ${dot.y - 10}px) scale(${dot.scale})`;
-
-    //             // Adjust opacity based on distance from cursor
-    //             const distance = Math.hypot(this.mousePosX - dot.x, this.mousePosY - dot.y);
-    //             const opacity = Math.max(0, 1 - (distance / 200));
-    //             dot.element.style.opacity = opacity;
-    //         });
-
-    //         requestAnimationFrame(this.animate.bind(this));
-    //     }
-    // }
-
-    // // Initialize the trail effect
-    // new PointerTrail();
     gsap.registerPlugin(ScrollTrigger);
     var tl = gsap.timeline();
 
@@ -725,6 +772,148 @@ Skilled in API development, data architecture, and integrating intelligent featu
       duration: 2,
       ease: Power4.easeOut
     })
+  </script>
+  <div id="agnes-modal" class="agnes-modal-overlay">
+    <div class="agnes-modal-content">
+      <div class="agnes-blob"></div>
+
+      <button class="agnes-close-btn" aria-label="Close Modal" onclick="closeAgnesModal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Hero Image -->
+      <div class="agnes-hero-image">
+        <img src="images/agnes_hero-1.png" alt="AI-powered real estate">
+      </div>
+
+      <div class="agnes-modal-body">
+        <div class="agnes-logo-area">
+          <span class="agnes-logo-text">Coming soon</span>
+        </div>
+
+        <h2 class="agnes-title">Agnes AI</h2>
+        <p class="agnes-subtitle">
+          The future of contextual real estate AI is arriving <br>
+          Visit now to get early access
+        </p>
+
+        <a href="https://agnes.techvory.in" target="_blank" class="agnes-cta-btn">
+          Explore Agnes
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Agnes Modal Logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.getElementById('agnes-modal');
+
+      // Open on load with a slight delay for better UX
+      setTimeout(() => {
+        modal.classList.add('active');
+      }, 1000);
+    });
+
+    function closeAgnesModal() {
+      const modal = document.getElementById('agnes-modal');
+      modal.classList.remove('active');
+    }
+
+    // Also close on background click
+    document.getElementById('agnes-modal').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('agnes-modal')) {
+        closeAgnesModal();
+      }
+    });
+
+
+    // Toggle Mobile Menu
+    // Navbar Scroll Effect (Absolute -> Fixed transition)
+    const header = document.querySelector('.header');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 0) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      const hamburger = document.querySelector('.hamburger-btn');
+
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    }
+
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.remove('active');
+        document.querySelector('.hamburger-btn').classList.remove('active');
+      });
+    });
+
+    // === Meltano-style Parallax Scroll Engine ===
+    (function () {
+      const parallaxLayers = document.querySelectorAll('.parallax-layer');
+      const heroContent = document.querySelector('.hero-content');
+      const hero = document.querySelector('.hero');
+      let ticking = false;
+
+      function updateParallax() {
+        const scrollY = window.scrollY;
+        const heroHeight = hero ? hero.offsetHeight : window.innerHeight;
+
+        // Only apply parallax within the hero section
+        if (scrollY > heroHeight) {
+          ticking = false;
+          return;
+        }
+
+        // Move each layer at its defined speed
+        parallaxLayers.forEach(layer => {
+          const speed = parseFloat(layer.dataset.speed) || 0.1;
+          const drift = parseFloat(layer.dataset.drift) || 0;
+          const scaleRate = parseFloat(layer.dataset.scale) || 0;
+
+          const yOffset = -(scrollY * speed);
+          const xOffset = scrollY * drift;
+          const scale = 1 + (scrollY * scaleRate / 1000);
+
+          layer.style.transform = `translate3d(${xOffset}px, ${yOffset}px, 0) scale(${scale})`;
+        });
+
+        // Fade out + lift hero content on scroll (like Meltano)
+        if (heroContent) {
+          const progress = Math.min(scrollY / (heroHeight * 0.5), 1);
+          const opacity = 1 - progress;
+          const lift = -(scrollY * 0.3);
+          heroContent.style.transform = `translate3d(0, ${lift}px, 0)`;
+          heroContent.style.opacity = opacity;
+        }
+
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(updateParallax);
+          ticking = true;
+        }
+      }, { passive: true });
+    })();
   </script>
 </body>
 
