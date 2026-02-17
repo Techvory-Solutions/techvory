@@ -63,17 +63,6 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-bg"></div>
-      <!-- Layer 3: Foreground accent blobs (fastest) -->
-      <div class="parallax-layer accent-blob-1" data-speed="0.2">
-        <div class="hero-decoration accent-shape"></div>
-      </div>
-      <div class="parallax-layer accent-blob-2" data-speed="0.25">
-        <div class="hero-decoration accent-shape pink"></div>
-      </div>
-      <div class="parallax-layer accent-blob-3" data-speed="0.15">
-        <div class="hero-decoration accent-shape blue"></div>
-      </div>
-
       <div class="container hero-content">
         <div class="hero-badge">Idea to MVP in 30 days</div>
         <h1 class="hero-heading">
@@ -231,7 +220,7 @@
                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
               </svg>
             </div>
-            <h3>MVPs That Actually Ship — Fast</h3>
+            <h3>MVPs That Actually Ship</h3>
             <p>We don’t just start projects — we finish them. Our process is designed to take you from idea to
               production-grade MVP in 30–45 days.</p>
           </div>
@@ -262,7 +251,7 @@
               </svg>
 
             </div>
-            <h3>Built for Scale, Not Just a Demo</h3>
+            <h3>Build for Scale, Not Demo</h3>
             <p>Our apps don’t break at first growth. We focus on performance, scalability, and clean code that grows
               with your business.</p>
           </div>
@@ -745,7 +734,7 @@
         trigger: '.services-grid',
         start: 'top bottom'
       },
-      x: '50',
+      x: window.innerWidth <= 768 ? 0 : '50',
       opacity: 0,
       duration: 2,
       ease: Power4.easeOut
@@ -756,7 +745,7 @@
         trigger: '.why-choose-us',
         start: 'top center'
       },
-      x: '-50',
+      x: window.innerWidth <= 768 ? 0 : '-50',
       opacity: 0,
       duration: 2,
       ease: Power4.easeOut
@@ -767,7 +756,7 @@
         trigger: '.portfolio',
         start: 'top center'
       },
-      x: '-50',
+      x: window.innerWidth <= 768 ? 0 : '-50',
       opacity: 0,
       duration: 2,
       ease: Power4.easeOut
@@ -842,6 +831,10 @@
     const header = document.querySelector('.header');
 
     window.addEventListener('scroll', () => {
+      if (window.innerWidth <= 1062) {
+        header.classList.remove('scrolled');
+        return;
+      }
       if (window.scrollY > 0) {
         header.classList.add('scrolled');
       } else {

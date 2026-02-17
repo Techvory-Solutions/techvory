@@ -23,12 +23,18 @@
   scroll-behavior: smooth;
 }
 
+html {
+  overflow-x: clip;
+}
+
 body {
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   line-height: 1.6;
   color: var(--text);
   background: var(--surface);
   /* overflow-x: hidden; Removed to allow sticky header */
+  overflow-x: clip;
+  /* Prevents horizontal scroll while allowing sticky */
 }
 
 .container {
@@ -539,7 +545,7 @@ body {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: 2rem;
   margin-top: 3rem;
 }
@@ -620,7 +626,7 @@ body {
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
   gap: 2rem;
   margin-top: 3rem;
 }
@@ -941,7 +947,7 @@ body {
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: 2rem;
   margin: 3rem 0;
 }
@@ -963,7 +969,7 @@ body {
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: 2rem;
   margin-top: 4rem;
 }
@@ -1331,7 +1337,8 @@ body {
 @media (max-width: 600px) {
   .agnes-modal-content {
     flex-direction: column;
-    max-width: 400px;
+    max-width: calc(100vw - 2rem);
+    transform: scale(1);
   }
 
   .agnes-modal-body {
@@ -1346,6 +1353,14 @@ body {
     flex: none;
     height: 200px;
     width: 100%;
+  }
+
+  .agnes-modal-overlay {
+    overflow: hidden;
+  }
+
+  .agnes-blob {
+    display: none;
   }
 }
 
@@ -1442,21 +1457,6 @@ body {
   box-shadow: 0 10px 15px -3px rgba(34, 211, 238, 0.2);
 }
 
-/* Blob Background in Modal */
-.agnes-blob {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(34, 211, 238, 0.15) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: -1;
-  top: -50%;
-  left: 50%;
-  transform: translateX(-50%);
-  filter: blur(40px);
-}
-
 /* CTA Visibility Control (Moved to end to override base styles) */
 .mobile-cta {
   display: none !important;
@@ -1523,6 +1523,7 @@ body {
   /* Mobile Header Styles */
   .header {
     background: var(--text-heading);
+    position: sticky;
   }
 
   .logo,
