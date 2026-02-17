@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
-  /* Meltano Design System Tokens */
-  --meltano-bg-gradient: linear-gradient(180deg, #9a82f7 -40%, #c5b6ff 25%, #e7e2fa 90%, #ffffff 100%);
+  --techvory-bg-gradient: linear-gradient(180deg, #9a82f7 -40%, #c5b6ff 25%, #e7e2fa 90%, #ffffff 100%);
   --primary: #3a64fa;
   --primary-hover: #2c4dd6;
   --secondary: #ff3e81;
@@ -146,7 +145,6 @@ body {
   font-size: 1rem;
   transition: color 0.2s;
   font-family: 'IBM Plex Mono', monospace;
-  /* Meltano style */
 }
 
 .nav-links a:hover {
@@ -233,7 +231,7 @@ body {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: var(--meltano-bg-gradient);
+  background: var(--techvory-bg-gradient);
   z-index: -2;
 }
 
